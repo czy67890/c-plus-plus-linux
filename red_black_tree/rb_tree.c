@@ -21,7 +21,7 @@ typedef struct _rb_tree{
 }rb_tree;
 
 
-void _left_rotate(rbtree * T,rbtree_node *x){
+void _left_rotate(rb_tree* T,rbtree_node *x){
     //左旋三个方向，六个指针改变
     rbtree_node * y = x->right;
     //第一个方向
@@ -45,7 +45,7 @@ void _left_rotate(rbtree * T,rbtree_node *x){
     x->parent = y;
 }
 
-void _right_rotate(rbtree *T,rbtree_node *y){
+void _right_rotate(rb_tree*T,rbtree_node *y){
     rbtree_node * x = y->left;
     y->left = x->right;
     //y的左子树不是叶节点的情况
@@ -70,7 +70,7 @@ void _right_rotate(rbtree *T,rbtree_node *y){
 //调整只关心父节点和祖父节点以及叔节点
 //先从父节点是左子树开始思考
 //是右子树的情况是对称的
-void rbtree_insert_fixup(rbtree * T,rbtree_node *z){
+void rbtree_insert_fixup(rb_tree* T,rbtree_node *z){
     //只有父节点是红色才可能会出现违背红黑树性质的情况
     //这个时候祖父节点一定是黑色，故不需要考虑
     //不断的迭代往上递归
@@ -121,7 +121,7 @@ void rbtree_insert_fixup(rbtree * T,rbtree_node *z){
 }
 
 
-void rbtree_insert(rbtree * T,rbtree_node *z){
+void rbtree_insert(rb_tree* T,rbtree_node *z){
     //y始终是x的父节点
     rbtree_node *y = T->nil;
     rbtree_node *x = T->root;
@@ -156,6 +156,8 @@ void rbtree_insert(rbtree * T,rbtree_node *z){
     z->color = RED;
     rbtree_insert_fixup(T,z);
 }
+
+
 
 
 
