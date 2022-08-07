@@ -154,7 +154,6 @@ void rbtree_insert(rbtree * T,rbtree_node *z){
     z->right = T->nil;
     //ÉÏºìÉ«
     z->color = RED;
-
     rbtree_insert_fixup(T,z);
 }
 
