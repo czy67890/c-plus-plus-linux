@@ -156,8 +156,8 @@ class Singleton5
 public:
     static T &GetInstance()
     {
-        static T instance; // 这?要初始化DesignPattern，需要调?DesignPattern
-        //构造函数，同时会调??类的构造函数。
+        static T instance; // 这里要初始化DesignPattern，需要调用DesignPattern
+        //构造函数，同时会调用类的构造函数。
         return instance;
     }
 
