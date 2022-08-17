@@ -133,8 +133,3 @@ void btree_create(struct btree * T,int t){
     T->root = btree_create_node(t,1);
 }
 
-
-int main(){
-    return 0;
-}
-
