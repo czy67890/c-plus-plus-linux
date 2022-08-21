@@ -28,5 +28,3 @@ TARGET_LINK_LIBRARIES(main b_and_b+tree_lib)
 #install 指定的目录或者文件到指定的目录
 #默认安装到 /usr/local中
 
-
-
